@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>La Grande Route — Chroniques des Terres Mornes</title>
+<title>La Grande Route — Chroniques d'un Arpenteur</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Alegreya:ital,wght@0,400;0,500;0,700;1,400&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
 <link rel="preload" as="script" href="src/ui/icons.js">
@@ -23,7 +23,7 @@
 [hidden]{display:none!important}
 html,body{height:100%}
 body{background:linear-gradient(180deg,#0d1512 0%,#0b120f 40%,#0a0f0c 100%);color:var(--parch);font-family:'Alegreya',serif;font-size:16.5px;line-height:1.5;overflow-x:hidden;-webkit-tap-highlight-color:transparent}
-body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:40;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFreEgidecy='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E")}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:40;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E")}
 #vig{position:fixed;inset:0;pointer-events:none;z-index:30;box-shadow:inset 0 0 100px 18px rgba(3,7,5,.55)}
 .brume{position:fixed;inset:-20%;pointer-events:none;z-index:0;opacity:.16;filter:blur(46px)}
 .b1{background:radial-gradient(40% 30% at 30% 40%,#5a7263,transparent 70%),radial-gradient(35% 25% at 75% 62%,#46604f,transparent 70%);animation:derive 46s linear infinite alternate}
@@ -103,7 +103,7 @@ h2{font-family:'Cinzel';font-weight:700;font-size:1.35rem;color:#e8d5a0;letter-s
 .carte::-webkit-scrollbar{width:7px}.carte::-webkit-scrollbar-thumb{background:#8a6d2f;border-radius:4px}
 .carte::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:3;border-radius:14px;background:radial-gradient(135% 90% at 50% 50%,transparent 58%,rgba(20,14,7,.32)),linear-gradient(180deg,rgba(20,14,7,.38),transparent 7%,transparent 93%,rgba(20,14,7,.38))}
 .carte-inner{position:relative;width:100%;overflow:hidden;background-color:#e6d3a7;background-image:radial-gradient(120px 70px at 22% 14%,rgba(255,248,222,.55),transparent 70%),radial-gradient(160px 90px at 78% 30%,rgba(255,248,222,.40),transparent 72%),radial-gradient(90px 60px at 40% 55%,rgba(120,86,40,.16),transparent 70%),radial-gradient(140px 80px at 70% 70%,rgba(120,86,40,.14),transparent 72%),linear-gradient(180deg,#efe0bb 0%,#e6d3a7 50%,#d8c08f 100%);box-shadow:inset 0 0 0 2px rgba(90,68,35,.45),inset 0 0 0 7px rgba(239,224,187,.40),inset 0 0 90px rgba(80,55,20,.45)}
-.carte-inner::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background-image:url("assets/map_Les Terres Mornes.jpg");background-size:100% 100%;background-position:center;opacity:.55;mix-blend-mode:multiply}
+.carte-inner::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background-image:url("assets/map_velen.jpg");background-size:100% 100%;background-position:center;opacity:.55;mix-blend-mode:multiply}
 .carte-inner::after{content:"";position:absolute;inset:-20%;z-index:0;pointer-events:none;opacity:.13;background-image:radial-gradient(40% 30% at 30% 40%,rgba(225,232,210,.9),transparent 70%),radial-gradient(35% 26% at 72% 64%,rgba(210,222,200,.8),transparent 72%);background-size:200% 200%,200% 200%;mix-blend-mode:screen;animation:brumeCarte 38s ease-in-out infinite alternate}
 @keyframes brumeCarte{from{background-position:10% 30%,90% 70%}to{background-position:40% 55%,60% 40%}}
 #lignes{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none}
@@ -164,15 +164,15 @@ h2{font-family:'Cinzel';font-weight:700;font-size:1.35rem;color:#e8d5a0;letter-s
 .btn.act{padding:.45rem .15rem;font-size:.56rem;line-height:1.15}
 .btn.act small{display:block;font-size:.46rem;color:#9a8a64;letter-spacing:.05em;margin-top:.08rem}
 .btn.act .ico{width:1.1em;height:1.1em;vertical-align:-.2em}
-.Sorts{display:flex;gap:.35rem;justify-content:center;margin-top:.3rem;flex-wrap:wrap}
-.signe{width:48px;height:48px;border-radius:50%;border:1px solid #4a3a20;background:radial-gradient(circle at 35% 28%,#2c2415,#150e07);cursor:pointer;font-size:1.05rem;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:.18s}
-.signe.s-Onde{--sc:#4aa3df}.signe.s-Brasier{--sc:#e0503a}.signe.s-Egide{--sc:#e09a3a}.signe.s-Glyphe{--sc:#a06ae0}.signe.s-Domination{--sc:#6fce6f}
-.signe:not(:disabled){border-color:var(--sc);color:var(--sc);box-shadow:0 0 12px -3px var(--sc),inset 0 0 10px -7px var(--sc)}
-.signe:not(:disabled) small{color:var(--sc)}
-.signe:not(:disabled):hover{box-shadow:0 0 16px -2px var(--sc)}
-.signe:disabled{opacity:.32;filter:grayscale(1);pointer-events:none}
-.signe small{font-family:'Cinzel';font-size:.42rem;font-weight:700}
-.signe .ico{width:1.35em;height:1.35em}
+.sorts{display:flex;gap:.35rem;justify-content:center;margin-top:.3rem;flex-wrap:wrap}
+.sort{width:48px;height:48px;border-radius:50%;border:1px solid #4a3a20;background:radial-gradient(circle at 35% 28%,#2c2415,#150e07);cursor:pointer;font-size:1.05rem;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:.18s}
+.sort.s-souffle{--sc:#4aa3df}.sort.s-embrasement{--sc:#e0503a}.sort.s-egide{--sc:#e09a3a}.sort.s-sceau{--sc:#a06ae0}.sort.s-murmure{--sc:#6fce6f}
+.sort:not(:disabled){border-color:var(--sc);color:var(--sc);box-shadow:0 0 12px -3px var(--sc),inset 0 0 10px -7px var(--sc)}
+.sort:not(:disabled) small{color:var(--sc)}
+.sort:not(:disabled):hover{box-shadow:0 0 16px -2px var(--sc)}
+.sort:disabled{opacity:.32;filter:grayscale(1);pointer-events:none}
+.sort small{font-family:'Cinzel';font-size:.42rem;font-weight:700}
+.sort .ico{width:1.35em;height:1.35em}
 .objets{display:grid;grid-template-columns:1fr 1fr;gap:.3rem;margin-top:.3rem;animation:apparu .3s ease both}
 .deg{position:absolute;font-family:'Cinzel';font-weight:900;font-size:1.5rem;animation:envol 1.05s ease-out forwards;pointer-events:none;text-shadow:0 2px 5px #000;z-index:6}
 @keyframes envol{from{opacity:1;transform:translateY(0) scale(.9)}30%{transform:translateY(-18px) scale(1.3)}to{opacity:0;transform:translateY(-58px) scale(1.1)}}
@@ -284,7 +284,7 @@ body.in-game #langbar{display:none}
 <div id="splash"><div class="sk">
 <div class="pl"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" stroke="none" fill-rule="evenodd" d="M12 4L15.2 2.2 15.7 5.5 17.5 6.7 19.7 8.5 17.7 9.7 20.3 11.5 17.9 12.7 19.5 14.7 16.5 16.7 12 21 7.5 16.7 4.5 14.7 6.1 12.7 3.7 11.5 6.3 9.7 4.3 8.5 6.5 6.7 8.3 5.5 8.8 2.2Z M14.7 3.3 15.1 5.1 13.7 4.9Z M9.3 3.3 8.9 5.1 10.3 4.9Z M13.3 7.7Q14.7 7 16.1 7.9 14.7 7.7 13.3 8.3Z M10.7 7.7Q9.3 7 7.9 7.9 9.3 7.7 10.7 8.3Z M13.5 9.5Q14.7 8.5 15.9 9.5 14.7 10.3 13.5 9.5Z M10.5 9.5Q9.3 8.5 8.1 9.5 9.3 10.3 10.5 9.5Z M10.7 13.7Q12 13.3 13.3 13.7 12.9 15 12 15.4 11.1 15 10.7 13.7Z M10.9 16.3Q12 17.1 13.1 16.3 12 16.7 10.9 16.3Z"/></svg></div>
 <h1>LA GRANDE ROUTE</h1>
-<p>Le Vieux Monde s'éveille…</p>
+<p>le continent s'éveille…</p>
 <div class="bar"><i></i></div>
 </div></div>
 <div id="langbar"><button id="lb_fr" onclick="setLang('fr')"><span class="flag">🇫</span>FR</button><button id="lb_en" onclick="setLang('en')"><span class="flag">🇬🇧</span>EN</button></div>

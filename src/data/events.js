@@ -2,7 +2,7 @@
 // LA GRANDE ROUTE — src/data/events.js
 // Les rencontres aléatoires de l'Acte I. Aucun texte : tout en
 // clés w.event.*. Le bûcheron est un PNJ de village (legacy.js),
-// le nid de goules (choix conditionnel Cendre-Aveugle) est inclus ici.
+// le nid de goules (choix conditionnel Poudre_aveuglante) est inclus ici.
 // Chaque eff() rend {txt, or?, combat?, heroique?} ;
 // un choix peut porter req:'id' (masqué sans l'objet) et
 // consume:'id' (l'objet est consommé).
@@ -45,7 +45,7 @@ const EVENTS=[
  {t:'w.event.toll.c1t',d:'w.event.toll.c1d',eff:()=>({txt:'w.event.toll.c1eff',combat:'brigand'})},
  {t:'w.event.toll.c2t',d:'w.event.toll.c2d',eff:()=>{if(Math.random()<.6){return{txt:'w.event.toll.c2effOk'};}return{txt:'w.event.toll.c2effNo',combat:'brigand'};}}]},
  {titre:'w.event.pillaged.title',em:'🔥',txt:'w.event.pillaged.txt',choix:[
- {t:'w.event.pillaged.c0t',d:'w.event.pillaged.c0d',eff:()=>({txt:'w.event.pillaged.c0eff',combat:'Fouisseure',heroique:true})},
+ {t:'w.event.pillaged.c0t',d:'w.event.pillaged.c0d',eff:()=>({txt:'w.event.pillaged.c0eff',combat:'fouisseur',heroique:true})},
  {t:'w.event.pillaged.c1t',d:'w.event.pillaged.c1d',eff:()=>({txt:'w.event.pillaged.c1eff'})}]},
  {titre:'w.event.herbalist.title',em:'🌿',npc:'herboriste',txt:'w.event.herbalist.txt',choix:[
  {t:'w.event.herbalist.c0t',d:'w.event.herbalist.c0d',eff:()=>{const id=soinClasse();S.sac[id]=(S.sac[id]||0)+1;return{txt:t('w.event.herbalist.c0eff',{name:t(OBJETS[id].n)})};}},
@@ -54,5 +54,5 @@ const EVENTS=[
  {titre:'w.event.goulenest.title',em:'🥚',txt:'w.event.goulenest.txt',choix:[
  {t:'w.event.goulenest.c0t',d:'w.event.goulenest.c0d',eff:()=>({txt:'w.event.goulenest.c0eff'})},
  {t:'w.event.goulenest.c1t',d:'w.event.goulenest.c1d',eff:()=>({txt:'w.event.goulenest.c1eff',combat:'goule'})},
- {t:'w.event.goulenest.c2t',d:'w.event.goulenest.c2d',req:'Cendre-Aveugle',consume:'Cendre-Aveugle',eff:()=>{S.rep++;return{txt:'w.event.goulenest.c2eff',or:70};}}]}
+ {t:'w.event.goulenest.c2t',d:'w.event.goulenest.c2d',req:'poudre_aveuglante',consume:'poudre_aveuglante',eff:()=>{S.rep++;return{txt:'w.event.goulenest.c2eff',or:70};}}]}
 ];
