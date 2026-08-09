@@ -1,0 +1,11 @@
+﻿État,Effet exact,Durée / décroissance,Sources
+Brûlure,−d PV au début de chaque phase ennemie,n tours (décrémente à chaque tick),Igni : sorcière "d=4,n=3" / autres "d=3,n=2"
+Poison,−d PV par phase ennemie,n tours,"Carreau empoisonné, curare"
+Saignement,−d PV par phase ennemie,n tours,Tir précis / lourde éclaireuse ("d=3,n=2""), carreau d'argent (35%)"
+Étourdi,Passe son attaque (le tour est sauté),Décrémente quand il rate son tour,"Aard (sorcière 2 / autres 1), Bombe Samum (1), Yrden sorcière (1), crash du Griffon (1)"
+Ralenti,Dégâts infligés ÷2 (ceil(d*.5)),⚠️ jamais décrémenté" (bug, voir plus bas)",Yrden (sorcière 3 / autres 2)
+Confus,Se blesse lui-même de "R(6,10)" au lieu d'attaquer,Décrémente à chaque tick,Axii (sorcière 2 / autres 1)
+Rallié,Dégâts infligés "×1,3",2 tours (décrémente en fin de phase ennemie),Rally du Guerrier Nekker
+Intangible,Dégâts subis "×0,2" (min 1),4 tours (décrémente en fin de phase) ; dissipé par Yrden / carreau d'argent / rune de foudre,"Brume (Foglet, Spectre)"
+Au sol (sol),Un volant posé subit "×1,3",Décrémente chaque tour jusqu'à ce qu'il revole,"Crash du Griffon, swoop"
+Chute (chute),Compteur : à 2", le volant s'écrase (sol 3 tours + étourdi 1)",Persistant jusqu'au crash,Aard / Yrden sur volant
